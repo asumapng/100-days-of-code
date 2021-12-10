@@ -1,0 +1,180 @@
+
+#DAY 3 - CONDITIONAL STATEMENTS 
+
+#IF ELSE STATEMENT 
+
+height=float(input("Please enter your height in feet: "))
+if height>=5.0:
+    print('You are eligible to take the water ride.')
+else:
+    print('You are not eligible to take the water ride.')
+    
+#NESTED IF ELSE
+
+height=float(input("Please enter your height in feet: "))
+age=int(input("Please enter your age: "))
+if height>=5.0:
+    if age>=18:
+        print("You are eligible to take the water ride.")
+    else:
+        print("You are underaged to take the water ride.") 
+else:
+    print('You are not eligible to take the water ride.')
+    
+#ELIF
+
+height==float(input("Please enter your height in feet: "))
+age=int(input("Please enter your age: "))
+if height>=5.0:
+    if age>=18:
+        print('You are eligible to take the water ride. \nYou have to pay $12.89.')
+    elif age<18 and age>2:
+        print('You are eligible to take the water ride. \nYou have to pay $10.99')
+    elif age<2:
+        print('Babies are not allowed on the water ride.')
+else:
+    print('You are not eligible to take the water ride.')     
+    
+#Code Challenge : 3.1
+
+number= int(input("Please enter a number: "))
+if number%2==0:
+    print(number, 'is an even number.')
+else:
+    print(number, 'is an odd number.')
+
+#BMI Calculator:
+    
+    #feet to meter converter
+height=float(input("Your height in feet=  "))
+meter=round(float(height*0.3048),2)
+print(meter)
+
+#BMI CALCULATOR
+
+a=float(input("What is your weight in kgs?  "))
+b=float(input("What is you height in meters?  "))
+BMI=round(a/b**2,2)
+print('Your Body Mass Index is',BMI)
+
+if BMI<18.5 :
+    print('YOU ARE UNDERWEIGHT.')
+elif BMI>18.5 and BMI<25:
+    print('YOU ARE OF NORMAL WEIGHT.')
+elif BMI>25 and BMI<30:
+    print('YOU ARE OVERWEIGHT')
+elif BMI>30 and BMI<35:
+    print('YOU ARE OBESE')
+else:
+    print('YOU ARE CLINICALLY OBESE')
+    
+#CODE CHALLENGE 3.3
+
+#divisible by 4 
+#evenly divisible by 100
+#evenly divisible by 400
+
+year=int(input('Please enter the year here: '))
+
+if year%4==0 and year%100!=0:
+    print(year, 'is a leap year')
+elif year%4==0 and year%100==0:
+        if year%400==0:
+            print(year, 'is a leap year')
+        else:
+            print(year,'is not a leap year')
+else: 
+    print(year, 'is not a leap year')
+    
+
+#MULTIPLE IF STATEMENTS
+
+height==float(input("Please enter your height in feet: "))
+age=int(input("Please enter your age: "))
+photo=input('Do you want a photo of yourself from the ride? \nType Yes or No  : ')
+if height>=5.0:
+    if age>=18:
+        if photo=='Yes':
+            price=12.99
+            print('You are eligible to take the water ride. \nYou have to pay.',price+3)
+        else:
+            price=12.99
+            print('You are eligible to take the water ride. \nYou have to pay.',price)
+    elif age<18 and age>2:
+        if photo=='Yes':
+            price=10.99
+            print('You are eligible to take the water ride. \nYou have to pay.',price+3)
+        else:
+            price=10.99
+            print('You are eligible to take the water ride. \nYou have to pay.',price)
+    elif age<2:
+        print('Babies are not allowed on the water ride.')
+else:
+    print('You are not eligible to take the water ride.')     
+
+#or
+
+height=float(input("Please enter your height in feet: "))
+age=int(input("Please enter your age: "))
+
+if height>=5.0:
+    if age>=18 :
+        price=12.99
+        print('You have to pay $',price,'to enter the ride.')
+    elif age<18:
+        price=10.99
+        print('You have to pay $',price,'to enter the ride')
+else:
+    print('You cannot take this ride.')
+    
+photo=input('Do you want a photo of yourself from the ride? \nType Y or N : \n')
+
+if photo=='Y':
+    print("You have to pay a total of $",price+3,'for the ride with the photo.')
+else:
+    print("You have to pay a total of $",price,'for the ride without the photo.')
+    
+#Code Challenge 3.4
+
+print("Welcome to the Python Pizza Deliveries")
+size=input("What size pizza do you want? S, M or L  :")
+
+cost = 0
+if size=='S':
+    cost += 15
+elif size=='M':
+    cost += 20
+elif size=='L':
+    cost += 25
+
+add_pepperoni = input('Do you want pepperoni? Y or N : ')
+extra_cheese=input('Do you want extra cheese? Y or N : ')
+
+if add_pepperoni=='Y':
+    if size=='S':
+        cost += 2
+    else:
+        cost += 3
+
+if extra_cheese=='Y':
+    cost += 1
+else:
+    print('Your total order costs $',cost)
+    
+#Code Challenge 3.5
+
+print("Welcome to the Love Calculator!")
+name1 = input('What is your name?  ')
+name2 = input( "What is your significant other's name?  ")
+
+both=name1.lower()+name2.lower()
+
+
+count_true=0
+count_love=0
+for i in both:
+    if i == 't' or i=='r' or i=='u' or i=='e':
+        count_true += 1
+    elif i=='l' or i=='o' or i=='v' or i=='e':
+        count_love += 1
+print(count_true,count_love,'%')
