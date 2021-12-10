@@ -1,0 +1,47 @@
+#Random Numbers
+
+#Pseudorandom number generators
+#Mersenne Algorithm 
+
+
+import random
+random_integer = random.randint(1,10)
+print(random_integer)
+
+# =============================================================================
+# MODULE
+# 
+# MODULES ARE PRE EXISTING CODES IN PROGRAMMING LANGUAGE
+# LIKE LIBRARIES 
+# MODULES ARE SIMILAR
+# HERE YOU IMPORT A MODULE TO MINIMIZE YOUR CODE LINES
+# 
+# =============================================================================
+
+#CREATING FLOAT RANDOM NUMBER
+
+#random() gives only float numbers from 0.00000.. - 0.999999999...
+random_float= random.random()
+print(random_float)
+
+#To extend the limit from 0-1
+#we will multiply the upper limit with the random float
+
+#Let us assume we want to print float number from 0.0000 to 70.000
+#the code will be
+
+random_float=random.random()*70
+print(random_float)
+
+#Code challenge 4.1
+
+#Write a code to flip a coin, heads or tails. 
+
+import random as randi
+randam=randi.randint(0,1)
+print(randam)
+
+if randam==0:
+    print('Your coin shows HEADS')
+elif randam==1:
+    print('Your coin shows TAILS')
