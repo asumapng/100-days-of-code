@@ -1,0 +1,136 @@
+#PYTHON BASICS AND F STRINGS
+
+print("Welcome to the Band Name Generator.\nWhat's the name of the city you were born in")
+print("What's the name of the city you grew up in?")
+a=input()
+print("What was your first pet's name?")
+b=input()
+print("Your band's name could be",a,b)
+
+
+#Tip Calculator - Day 2 on 100 dates of coding
+
+print(len("Suma"))
+
+#STRINGS 
+
+#printing a letter from a string
+#subscripting is another name
+#starts from 0 index from start
+print("Ahmed Zacky"[1])
+#starts from -1 from the back
+print("Suma"[-4])
+
+#concatenating strings
+print("1234"+"5674")
+print("Ahmedo"+"Zacky")
+
+#INTEGERS
+
+#prints numbers separated by commas
+print(123,890,900) 
+
+#we can use underscores to express large numbers
+#python interprets it as a normal number 
+#whereas it makes it easier to read for us
+print(123_234_456)
+
+#FLOAT - Decimal numbers
+
+print(3.1234)
+
+#BOOLEAN - TRUE OR FALSE
+
+1==1
+
+#type casting - changing the data type of the object
+
+num_char= len(input("What is your name?  "))
+new_num_char=str(num_char)
+print("Your name has "+new_num_char+" characters")
+
+a=123
+type(a)
+str(a)
+type(a)
+
+#Code challenge 2 
+
+a=str(input('Type a number you want to add the digits of:   '))
+print(int(a[0])+int(a[1]))
+
+b=str(input('Enter a number to add:  '))
+
+two_digit_number= input("Type a number: ")
+print(int(two_digit_number[0])+int(two_digit_number[1]))
+
+#mathematical operators
+
+#division always gives float output
+
+6/3
+int(6/3)
+
+#order of mathematical calculation 
+# PEMDAS
+# ()
+# **
+# * OR /
+# +
+# -
+
+print(3*3+3/3-3)
+
+#Code Challenge 2.2 - Body mass index
+
+BMI = Weight / Height^2
+
+a=float(input("What is your weight in kgs?  "))
+b=float(input("What is you height in meters?  "))
+print('Your Body Mass Index is',round(a/b**2,2))
+
+height=float(input("Your height in feet=  "))
+meter=round(float(height*0.3048),2)
+print(meter)
+
+#F strings
+
+#to print different data types in the previous output
+# we convert a lot of datatypes and shit
+#to simplify it we use f string
+#when we use this
+#python automatically detects the datatype
+#changes it accordingly for the print statement to work
+
+score=100
+subject="Python"
+grade="A"
+print(f"Your score in {subject} is {score}. Your grade is {grade}")
+
+
+#in the above code I didnt change any datatype
+#but still got an output
+
+#Code challenge 2.3
+
+age=int(input('What is your current age? '))
+
+years = 90-age
+weeks = (90*52)-(age*52)
+months = (90*12)-(age*12)
+days = (90*365)-(age*365)
+
+print( f'Assuming that you are going to stay alive for 90 years \nYou still have \n{years} years \n{weeks} weeks \n{days} days \nalive on this earth')
+
+#Code Challenge 2.4
+
+#Tip Calculator
+
+print('Welcome to tip calculator')
+total=int(input("Total Bill Cost: "))
+tip=int(input("How much tip would you like to give:"))
+split=int(input("How many people are spliting: "))
+total_after_tip= total + total*(tip/100)
+split_final= total_after_tip/split
+print('Your individual split bill cost is:',round(split_final,2))
+
