@@ -1,0 +1,85 @@
+#DAY 4 - ROCK, PAPER, SCISSORS GAME
+
+# ROCK=0
+# PAPER=1
+# SCISSORS=2
+
+rock='''
+
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___) 
+
+
+'''
+
+paper='''
+
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+
+'''
+scissors='''
+
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+
+'''
+def game2():
+    player=int(input('CHOOSE ROCK, PAPER OR SCISSORS: \nROCK=0 \nPAPER=1 \nSCISSORS=2 \nYOUR PICK: '))
+    
+    print('\n\nYou have picked: ')
+    if player==0:
+        print("ROCK",rock)
+    elif player==1:
+        print("PAPER",paper)
+    else:
+        print("SCISSORS",scissors)
+    
+    import random
+    computer=random.randint(0,2)
+    
+    print('\nYour opponent has picked: ')
+    if computer==0:
+        print("ROCK",rock)
+    elif computer==1:
+        print("PAPER",paper)
+    else:
+        print("SCISSORS",scissors)
+    
+    if player==computer:
+        print("YOU AND YOUR OPPONENT HAVE PICKED THE SAME. YOU ARE IN A TIE.")
+    elif player==0:
+        if computer==2:
+            print('YOU WIN.')
+        else:
+            print('YOU LOSE. YOUR OPPONENT WON.')
+    elif player==1:
+        if computer==0:
+            print('YOU WIN.')
+        else:
+            print('YOU LOSE. YOUR OPPONENT WON.')
+    elif player==2:
+        if computer==1:
+            print('YOU WIN.')
+        else:
+            print('YOU LOSE. YOUR OPPONENT WON.')
+    print('\nThank you for playing the game.')
+    ask=input('\nDo you want to play again?  Y/N  :').lower()
+    if ask=='y':
+        game2()
+    else:
+        print('The game has ended.')
+
+game2()
