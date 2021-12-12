@@ -1,0 +1,90 @@
+
+#Code Challenge 5.1 - Average heights 
+
+students_heights = input('Input a list of student heights :').split(',')
+print(students_heights)\
+    
+count=0
+for n in range(len(students_heights)):
+    count += 1
+print('n=',count)
+
+summ=0
+for n in range(len(students_heights)):
+    summ += int(students_heights[n])
+print('sum of heights=',summ)
+
+average=summ/count
+
+print('Therefore the average height of the students in the class is',average,'cm.')
+
+#without sum() and len()
+
+total_height=0
+for height in students_heights:
+    total_height += int(height)
+print('The sum of all the heights of the students in the class is',total_height)
+
+num_of_students=0
+for students in students_heights:
+    num_of_students += 1
+print('The total number of students\' heights collected is',num_of_students)
+
+avg=total_height/num_of_students
+
+print(f'The average height of the class is {avg} cms.')
+
+#Code challenge 5.2 - Highest Score
+
+student_scores=input('Please give in your scores: ').split(',')
+scores_int=map(int,student_scores)
+student_score=list(scores_int)
+print(student_score)
+
+highest_score=0
+for score in student_score:
+    if score > highest_score:
+        highest_score = score
+print('The highest score in the class is',highest_score)
+
+#or
+
+max(student_score)
+
+#RANGE FUNCTION
+
+#RANGE(START,END,STEP)= STARTING NUMBER, ENDING NUMBER AND THE DIFFERENCE BETWEEN EACH NUMBER
+
+#program to add up 1 to 100
+
+total = 0
+for number in range(1,101):
+    total += number
+print(f'The sum from 1 to 100 is {total}.')
+
+#Code Challenge 5.3
+
+#sum of all the even numbers, including 1 and 100
+
+total = 0
+for number in range(0,101):
+    if number==1 or number%2==0:
+        total += number
+print(f'The sum of all even numbers including 1 and 100 is {total}')
+
+#Code Challenge 5.4
+# 3 = fizz
+# 5 = buzz
+# 3,5 = fixxbuzz
+
+for i in range(0,101):
+    if i%3==0 and i%5==0:
+        print('FizzBuzz')
+    elif i%3==0:
+        print('Fizz')
+    elif i%5==0:
+        print('Buzz')
+    else:
+        print(i)
+
+
