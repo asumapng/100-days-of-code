@@ -1,0 +1,27 @@
+word_list = ["aardvark", "baboon", "camel"]
+
+print('HANGMAN GAME')
+print('')
+import random
+chosen_word=random.choice(word_list)
+
+print(f'Pssst, the solution is {chosen_word}.')
+display=[]
+for _ in range(len(chosen_word)):
+    display += "_"
+
+guesses=0
+while "_" in display and guesses<10:
+    guess = input("Guess a letter: ").lower()
+    for position in range(len(chosen_word)):
+        letter=chosen_word[position]
+        if letter==guess:
+            display[position]=letter
+    word="".join(display)
+    print(display)
+    guesses += 1
+
+if word==chosen_word:
+    print(f'The word was {chosen_word}. You won.')
+else:
+    print(f'The word was {chosen_word}. You lost.')
