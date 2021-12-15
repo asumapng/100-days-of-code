@@ -1,0 +1,60 @@
+def greet():
+    print('Hellow there:')
+    print('My name is Suma.')
+    print('I am learning to program through UDEMY')
+
+greet()
+
+def greet_with_name(name):
+    print(f'Hello {name}.')
+    print(f"{name}, do you prefer tea over coffee?")
+    print(f'Is your name really {name}?')
+    
+greet_with_name("suma")
+
+# function=greet_with_name()
+# paramater=name
+# argument=suma
+
+#Functions with more than one inputs
+
+def greet_with(name,location):
+    print(f"Hello {name}.")
+    print(f"How is the weather in {location}?")
+
+greet_with('suma','bangalore') #position argument
+
+greet_with(name='suma',location='bangalore')
+
+#Code Challenge 8.1 - Area Calculation
+#1 can = 5 sq meters of wall
+
+h=int(input('Give the height of the wall in meters:'))
+w=int(input('Give the width of the wall in meters:'))
+
+import math
+painty=math.ceil((h*w)/5)
+
+def paint(height=h,width=w):
+    print(f"\nThe height of the wall is {height} meters.")
+    print(f"The width of the wall is {width} meters.")
+    print("\nThe area of the wall is",h*w,'square meters.')
+    print(f"\nTherefore, the number of cans you need to paint the wall is {painty} cans.")
+
+paint()
+
+#Code Challenge 8.2 - Prime Number checker
+
+n=int(input("Check this number :"))
+
+def prime_checker(number=n):
+    count = 0
+    for i in range(1,100):
+        if number%i==0:
+            count += 1
+    if count<=2:
+        print(f"{number} is a prime number.")
+    else:
+        print(f"{number} is not a prime number.")
+        
+prime_checker()
