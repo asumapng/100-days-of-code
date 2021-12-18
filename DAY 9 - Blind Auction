@@ -1,0 +1,25 @@
+print("Welcome to the blind auction:")
+print("Please bid your prices.")
+
+bidding="start"
+bidders={}
+    
+while bidding=="start":
+    name=input("Welcome to the secret auction program. \nWhat is your name? : ")
+    bid=int(input('What is your bid? $: '))
+    more=input('Is ther another bidder? \nType "yes" or "no" : \n')
+
+    bidders[name]=bid
+    
+    if more=="no":
+        bidding="end"
+        print("Thank you for bidding.")
+
+highest_bid=0
+for bidder in bidders:
+   bid_money = bidders[bidder]
+   if bid_money > highest_bid:
+       highest_bid = bid_money
+       winner = bidder
+       
+print(f"Thank you for bidding. \n\n{winner} is the auction winner at ${highest_bid}")
