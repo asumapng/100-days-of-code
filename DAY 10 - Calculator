@@ -1,0 +1,43 @@
+
+def calculator():
+    def add(n1,n2):
+        return n1+n2
+    
+    def sub(n1,n2):
+        return n1-n2
+    
+    def mul(n1,n2):
+        return n1*n2
+    
+    def divi(n1,n2):
+        return n1/n2
+    
+    operations={
+        '+':add,
+        "-":sub,
+        "*":mul,
+        "/":divi,}
+    
+    
+    num1 = float(input("What's the first number? \n"))
+    print("\n")
+    resume="y"
+    while resume=="y":
+        for operation in operations:
+            print(operation)
+        op = input("What operation do you want to perform? \n")
+        num2 = float(input("\n What's the next number? \n"))
+        calculation_function=operations[op]
+        answer=calculation_function(num1,num2)
+        print(f"\n{num1}{op}{num2} = {answer}")
+        resume=input("\nType 'y' to continue the calculation. \nType 'n' to start new calculation. \nType e to end session. \n").lower()
+        
+        if resume=="y":
+            num1=answer
+            print("\n")
+        elif resume=="n":
+            calculator()
+        else:
+            break
+            print("\n")
+calculator()
