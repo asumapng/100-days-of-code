@@ -1,0 +1,60 @@
+
+
+def blackjack():
+    print("Welcome to blackjack game. I hope you have fun. \n")
+    print('''
+         _     _            _    _            _    
+        | |   | |          | |  (_)          | |   
+        | |__ | | __ _  ___| | ___  __ _  ___| | __
+        | '_ \| |/ _` |/ __| |/ / |/ _` |/ __| |/ /
+        | |_) | | (_| | (__|   <| | (_| | (__|   < 
+        |_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_\
+                               _/ |                
+                              |__/             ''')
+    start=input("Enter your name to start the game. \n")
+    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+    import random
+    user = []
+    a = random.choice(cards)
+    user.append(a)
+    print('\nYou got',a,'points.')
+    
+    computer = []
+    b = random.choice(cards)
+    computer.append(b)
+    print('Your opponent has gotten',b,'points.\n')
+    
+    decision1=input('Do you want to hit or stay? \nType "hit" to draw another card. \nType "stay" to reveal opponents card.\n').lower()
+    count=0
+    while decision1 == "hit" and sum(user)<21 and count<3:
+        a = random.choice(cards)
+        user.append(a)
+        print('\nYou got',a,'points.')
+        print(f"Your total score right now is {sum(user)}")
+        decision1=input('Do you want to hit or stay? \nType "hit" to draw another card. \nType "stay" to reveal opponents card.\n').lower()
+        count += 1
+    
+    b = random.choice(cards)
+    computer.append(b)
+    print('Your opponent has gotten',b,'points.\n')
+    print(f"{start} = {sum(user)}")
+    print(f"Opponent = {sum(computer)}")
+    usser= sum(user)
+    comp = sum(computer)
+    
+    if usser==comp:
+        print('It is a draw game.\n')
+    elif usser<=21 and usser>comp:
+        print(f'You scored greater than your opponent. You win {start}. \n')
+    else:
+        print(f'Your opponent scored greater than you. You lose {start}. \n')
+        
+    Regame=input('Do you wanna play another round?. \nType "yes" or "no". \n').lower()
+    if Regame=="yes":
+        print("\014")
+        blackjack()
+    else:
+        print("\nThank you for playing blackjack. Have a great day. \n")
+        
+blackjack()
+
