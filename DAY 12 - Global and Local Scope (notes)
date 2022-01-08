@@ -1,0 +1,87 @@
+enemies = 1
+
+def increase_enemies():
+    enemies = 2
+    print(f"enemies inside function: {enemies}")
+
+increase_enemies()
+print(f"enemies outside function: {enemies}")
+
+# local scope
+
+player_health = 10
+
+def drink_potion():
+    potion_strength = 2
+    print(potion_strength,player_health)
+
+drink_potion()
+
+# =============================================================================
+# HERE: potion strength is local scope
+# player health is global scope
+# =============================================================================
+
+# =============================================================================
+# There is no block scope in python
+# It is present in C++ and Java
+# 
+# In the if block, the new variable ne_enemy is created.
+# We can use ne_enemy outside the if block
+# hence there is no block scope in python 
+#
+# Whereas, if it is an if block inside a user defined function,
+# It is in a local scope
+# =============================================================================
+
+game_level = 3
+def game():
+    enemies=['skeleton',"zombies","alien"]
+    if game_level <5:
+        ne_enemy = enemies[0]
+        print(ne_enemy)
+game()
+
+# =============================================================================
+# 
+# #modifying a global scope variable
+# 
+# =============================================================================
+
+enemies=0
+def increase_enemies():
+    global enemies
+    enemies += 1
+    print(f"enemies outside function: {enemies}")
+
+increase_enemies()
+
+#This is usually not done. 
+#every time the global function is used, 
+#it is highly likely to create bugs in your code.
+
+#Instead we can use the return statement
+
+def increase_enemiess():
+    print(f"enemies inside function : {enemies}")
+    return enemies + 1
+
+enemies = increase_enemiess()
+
+# =============================================================================
+# #Global constants
+
+
+# There are several times where you will use a universal constant
+# Like the value of PI
+# Or your username on github 
+# URL to your linkedin
+
+# You can use Uppercase variable names to define and fix them.
+
+#PI = 3.14159
+#URL = "https://www.google.com
+#TWITTER_HANDLE = "@asuma.png"
+
+# =============================================================================
+
