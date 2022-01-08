@@ -1,0 +1,34 @@
+print("Welcome to 'GUESS THE NUMBER' game. \nI'm thinking of a number from 1 and 100.")
+import random
+n = random.randint(1,100)
+difficulty = input("Choose your difficulty: 'easy' or 'hard'. \n")
+
+def guess():
+    if difficulty=="easy":
+        attempts=10
+    else:
+        attempts=5
+    print("\nYou have ",attempts," guesses to make.")
+    
+    count=0
+    while not count==attempts:
+        guess=int(input("Make a guess: "))
+        if guess==n:
+            print("You have guessed the right number. You win :)")
+            break
+        else:
+            if guess>=n-3 and guess<=n+3:
+                print("You are very close to the right number.")
+            elif guess<n-3:
+                print("The number you have guessed is too low.")
+            elif guess>n+3:
+                print("The number you have guessed is too high.")
+        count += 1
+        if count<attempts:
+            print("Guess again.")
+        print("You have ",attempts-count, " guesses remaining. \n")
+        
+    if count==attempts:
+        print("You have run out of guesses. You Lose.")
+        print("The number was ",n)
+guess()
